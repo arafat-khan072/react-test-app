@@ -2,7 +2,7 @@ import { LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 import axios from "axios";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -80,6 +80,13 @@ const Register = () => {
                 </Button>
               </Form.Item>
             </Form>
+            <div className="mt-8 space-x-1">
+              <span className="text-neutral-500">Don't have an account?</span>
+
+              <Link to="/login" className={`text-blue-600 font-medium`}>
+                Login
+              </Link>
+            </div>
           </div>
         </div>
       </div>
