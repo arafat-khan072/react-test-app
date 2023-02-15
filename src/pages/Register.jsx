@@ -23,8 +23,7 @@ const Register = () => {
       <div className="flex flex-row h-full w-full border shadow-lg">
         {/* BANNER */}
         <div
-          className={`relative flex-1 bg-gradient-to-b from-blue-600 to-blue-400`}
-          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+          className={`relative flex-1 bg-gradient-to-b from-blue-600 to-blue-400 hidden lg:block lg:flex lg:justify-center lg:items-center`}
         >
           <div className="font-bold text-white italic font-serif">
             <h2>"Design is intelligence made visible."</h2>
