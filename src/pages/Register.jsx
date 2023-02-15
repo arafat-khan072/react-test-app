@@ -24,10 +24,17 @@ const Register = () => {
         {/* BANNER */}
         <div
           className={`relative flex-1 bg-gradient-to-b from-blue-600 to-blue-400`}
-        ></div>
+          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        >
+          <div className="font-bold text-white italic font-serif">
+            <h2>"Design is intelligence made visible."</h2>
+            <h2 className="ml-[150px]"> -- Alina Wheeler</h2>
+          </div>
+        </div>
         {/* Form */}
         <div className="w-full h-full flex-1 flex justify-center items-center bg-white">
           <div className="w-2/3">
+            <h2 className="font-bold text-center mb-3 text-cyan-500">React App</h2>
             <Form
               name="normal_login"
               className="login-form"

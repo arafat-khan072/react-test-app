@@ -1,9 +1,9 @@
-import { LogoutOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
+import Nav from "../Component/Nav";
 import { AuthContext } from "../context/AuthProvider";
 
 const initialState = {
@@ -112,17 +112,9 @@ const Form = () => {
 
   return (
     <div>
-      <nav className="bg-blue-600 text-white flex justify-between px-6 py-2 font-medium">
-        <Link to="/">App</Link>
-        <div
-          onClick={() => dispatch({ type: "LOGOUT" })}
-          className="flex justify-center items-center gap-2"
-        >
-          <Link to="#"><LogoutOutlined /> Logout</Link>
-        </div>
-      </nav>
-      <div className="h-screen w-screen flex justify-center items-center">
-        <div className="bg-blue-500 text-white w-1/4  p-4 rounded-md">
+      <Nav />
+      <div className="h-screen w-screen flex justify-center items-center bg-cyan-200">
+        <div className="bg-blue-500 text-white w-3/4 lg:w-1/4  p-4 rounded-md">
           <span className="">
             Please enter your name and pick the Sectors you are currently involved
             in.

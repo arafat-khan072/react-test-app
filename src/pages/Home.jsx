@@ -1,18 +1,19 @@
-import { EditOutlined, LogoutOutlined } from "@ant-design/icons";
+import { EditOutlined } from "@ant-design/icons";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Nav from "../Component/Nav";
 import { AuthContext } from "../context/AuthProvider";
 
 const Home = () => {
   const { currentUser, dispatch } = useContext(AuthContext);
   const [profile, setProfile] = useState({});
 
-  console.log("profile", profile);
+  // console.log("profile", profile);
 
   const TOKEN = currentUser?.token;
 
-  console.log(TOKEN);
+  // console.log(TOKEN);
 
   const userInfo = async () => {
     const res = await axios.get(
@@ -32,17 +33,9 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <nav className="bg-blue-600 text-white flex justify-between px-6 py-2 font-medium">
-        <Link to="/">App</Link>
-        <div
-          onClick={() => dispatch({ type: "LOGOUT" })}
-          className="flex justify-center items-center gap-2"
-        >
-          <Link to="#"><LogoutOutlined /> Logout</Link>
-        </div>
-      </nav>
+      <Nav />
 
-      <div className="h-screen w-screen flex justify-center items-center">
+      <div className="h-screen w-screen flex justify-center items-center bg-cyan-200">
         <div className="flex flex-col bg-blue-600 w-72 rounded-md p-4 m-4 text-white">
           <span>Name: {profile.username}</span>
           <span>Email: {profile.email}</span>

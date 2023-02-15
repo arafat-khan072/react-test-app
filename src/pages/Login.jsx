@@ -1,9 +1,9 @@
-import { Input, Form, Button } from "antd";
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
+import { Button, Form, Input } from "antd";
 import axios from "axios";
 import { useContext } from "react";
-import { AuthContext } from "../context/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
   const { dispatch } = useContext(AuthContext);
@@ -27,11 +27,19 @@ const Login = () => {
       <div className="flex flex-row h-full w-full border shadow-lg">
         {/* BANNER */}
         <div
-          className={`relative flex-1 bg-gradient-to-b from-blue-600 to-blue-400`}
-        ></div>
+          className={`relative flex-1 bg-gradient-to-b from-blue-600 to-blue-400 hidden lg:block`}
+          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        >
+          <div className="font-bold text-white italic font-serif">
+            <h2>"Design is intelligence made visible."</h2>
+            <h2 className="ml-[150px]"> -- Alina Wheeler</h2>
+          </div>
+        </div>
         {/* Form */}
         <div className="w-full h-full flex-1 flex justify-center items-center bg-white">
+
           <div className="w-2/3">
+            <h2 className="font-bold text-center mb-3 text-cyan-500">React App</h2>
             <Form
               name="normal_login"
               className="login-form"
